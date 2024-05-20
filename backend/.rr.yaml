@@ -1,0 +1,8 @@
+grpc:
+  listen: "tcp://:9090"
+  proto: "./proto/echo.proto"
+  workers:
+    command: "php grpc-worker.php"
+    pool:
+      numWorkers: 1
+      maxJobs:    1
