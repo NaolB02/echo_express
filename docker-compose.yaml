@@ -1,0 +1,19 @@
+version: '3'
+services:
+  envoy:
+    image: envoyproxy/envoy:v1.22.0
+    network_mode: host
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml:ro
+
+  backend:
+    build: ./backend
+    container_name: php-grpc-server
+    ports:
+      - "9090:9090"
+  
+  frontend:
+    build: ./frontend
+    container_name: react-grpc-client
+    ports:
+      - "3000:3000"

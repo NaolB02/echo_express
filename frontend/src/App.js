@@ -30,7 +30,7 @@ function App() {
         <h1>Echo Express</h1>
         <h2>Send a message to the server and receive the echo</h2>
       </div>
-      <div class="bg-image"></div>
+      <div className="bg-image"></div>
       <div className="App">
         <input
           type="text"
